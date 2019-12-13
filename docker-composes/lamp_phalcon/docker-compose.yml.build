@@ -8,9 +8,9 @@ services:
     depends_on:
       - db
     volumes:
-      - ./public_html:/var/www/html
+      - /mnt/Dockers/public_html:/var/www/html
     ports:
-      - 8082:80
+      - 8083:80
     links:
       - db:db
     restart: unless-stopped
@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     ports:
-      - 8081:80
+      - 8082:80
     links:
       - db:db
     restart: unless-stopped
@@ -33,5 +33,8 @@ services:
       MYSQL_ROOT_PASSWORD: toor
       MYSQL_USER: devUser
       MYSQL_PASS: devPass
+    volumes:
+      - /mnt/Dockers/mariadb/config:/etc/mysql/conf.d
+      - /dockers/mariadb/database:/var/lib/mysql
     ports:
       - 3308:3306
