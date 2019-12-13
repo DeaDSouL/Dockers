@@ -32,7 +32,7 @@ Debian 9 (Stretch-slim).
 * php7.3-pgsql
 * php7.3-memcached
 
-If there is anything is missing, please let me know to include it in the build.
+If there is anything missing, please let me know to include it in the build.
 
 ## Using it:
 ```
