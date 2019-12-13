@@ -3,7 +3,7 @@ services:
   web:
     build:
       context: ../../docker-images/apache_phalcon/
-      dockerfile: apache_phalcon-php-7.3
+      dockerfile: Dockerfile
     container_name: phalcon
     depends_on:
       - db
