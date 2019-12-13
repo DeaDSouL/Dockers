@@ -29,6 +29,10 @@ RUN apt install -y php7.3 php7.3-cli php7.3-common php7.3-json php7.3-opcache \
 
 RUN echo -ne '#!/bin/bash \nservice apache2 start \ntail -f /var/log/apache2/access.log' > /bin/apache2.fg
 
+# Enable apache mod rewrite
+COPY --chown=root:root 000-default.conf /etc/apache2/sites-available/
+RUN service apache2 start && a2enmod rewrite && service apache2 stop
+
 WORKDIR /var/www/html
 
 EXPOSE 80
