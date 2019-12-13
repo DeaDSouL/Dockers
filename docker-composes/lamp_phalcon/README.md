@@ -4,6 +4,7 @@ A complete LAMP server that has:
 * PHP-7.3
 * Phalcon-3.4.5
 * MariaDB-10.3
+* PHPMyAdmin-4.9
 
 # To build & run it:
 ```

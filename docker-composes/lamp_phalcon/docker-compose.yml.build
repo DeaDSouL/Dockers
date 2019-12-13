@@ -11,6 +11,18 @@ services:
       - ./public_html:/var/www/html
     ports:
       - 8082:80
+    links:
+      - db:db
+    restart: unless-stopped
+  myadmin:
+    container_name: myadmin49
+    image: phpmyadmin/phpmyadmin:4.9
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    links:
+      - db:db
     restart: unless-stopped
   db:
     container_name: mariadb103
