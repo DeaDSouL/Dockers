@@ -1,4 +1,4 @@
-# BUILD: docker build -t deadsoul/apache_phalcon:php-7.3 -f apache_phalcon-php-7.3 .
+# BUILD: docker build -t deadsoul/apache_phalcon:php-7.3 -f Dockerfile .
 
 FROM debian:stretch-slim
 
