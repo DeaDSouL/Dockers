@@ -9,7 +9,7 @@ services:
     depends_on:
       - myadmin
     volumes:
-      - /mnt/Dockers/public_html:/var/www/html
+      - /dockers/public_html:/var/www/html
     ports:
       - 8081-8090:80
     links:
