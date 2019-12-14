@@ -33,6 +33,8 @@ RUN echo -ne '#!/bin/bash \nservice apache2 start \ntail -f /var/log/apache2/acc
 COPY --chown=root:root 000-default.conf /etc/apache2/sites-available/
 RUN service apache2 start && a2enmod rewrite && service apache2 stop
 
+RUN chown -R www-data:www-data /var/www/html
+
 WORKDIR /var/www/html
 
 EXPOSE 80
