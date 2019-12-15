@@ -11,21 +11,10 @@ services:
     volumes:
       - /dockers/public_html:/var/www/html
     ports:
-      - 8081-8090:80
+      - 80:80
     links:
       - mariadb:db
     restart: unless-stopped
-  # --------------------------------------------------
-  haproxy:
-    image: dockercloud/haproxy
-    depends_on:
-      - phalcon
-    links:
-      - phalcon
-    ports:
-      - 80:80
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
   # --------------------------------------------------
   myadmin:
     #container_name: myadmin49
